@@ -6,10 +6,10 @@
     <title>Services - SmartCart</title>
 
     <style>
-        /* General Setup */
+      
         body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; color: #333; }
         
-        /* Navigation with Cart Counter */
+        
         nav { display: flex; justify-content: space-between; align-items: center; background: #222; color: white; padding: 12px 5%; position: sticky; top: 0; z-index: 1000; }
         nav h2 { margin: 0; font-size: 1.5rem; }
         nav a { color: white; margin-left: 15px; text-decoration: none; transition: 0.3s; }
@@ -17,13 +17,13 @@
         
         .cart-status { background: #e74c3c; color: white; padding: 2px 8px; border-radius: 50%; font-size: 0.8rem; margin-left: 5px; }
 
-        /* Page Title */
+       
         .page-title { text-align: center; padding: 40px 20px; background: #fff; border-bottom: 1px solid #eee; margin-bottom: 30px; }
 
-        /* Product Grid */
+   
         .products-container { max-width: 1100px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 
-        /* Product Card */
+       
         .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s; text-align: center; border: 1px solid #eee; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
         
@@ -33,7 +33,7 @@
         .card .price { color: #27ae60; font-weight: bold; font-size: 1.1rem; margin-bottom: 15px; }
         .card p.desc { font-size: 0.9rem; color: #777; margin-bottom: 15px; }
 
-        /* Button Styling */
+      
         button { background: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; transition: background 0.3s; }
         button:hover { background: #219150; }
 
@@ -111,7 +111,6 @@ function addToCart(name, price) {
 function updateCount() {
     document.getElementById('cart-count').innerText = cart.length;
 }
-// Run on load to show existing count
 updateCount();
 </script>
 
