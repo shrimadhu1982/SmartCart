@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact - SmartCart</title>
+
+<style>
+body{margin:0;font-family:Arial;}
+nav{display:flex;justify-content:space-between;background:#222;color:white;padding:12px;}
+nav a{color:white;margin:0 10px;text-decoration:none;}
+
+.form{width:300px;margin:40px auto;display:flex;flex-direction:column;}
+input,textarea{margin:8px 0;padding:8px;}
+button{background:blue;color:white;padding:10px;border:none;}
+</style>
+
+</head>
+<body>
+
+<nav>
+<h2>SmartCart</h2>
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<h1 style="text-align:center;">Contact Us</h1>
+
+<form class="form" onsubmit="return validateForm()">
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+<textarea id="message" placeholder="Message"></textarea>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm(){
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let message=document.getElementById("message").value;
+
+if(name==""||email==""||message==""){
+alert("Please fill all fields");
+return false;
+}
+
+alert("Form submitted successfully!");
+return true;
+}
+</script>
+
+</body>
+</html>
+

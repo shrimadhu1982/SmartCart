@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - SmartCart</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f9f9f9; }
+        nav { display: flex; justify-content: space-between; background: #222; color: white; padding: 15px 5%; }
+        nav a { color: white; text-decoration: none; margin-left: 15px; }
+
+        .cart-container { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
+        .remove-btn { background: #ff4757; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+        
+        .cart-summary { margin-top: 30px; text-align: right; }
+        .total-price { font-size: 1.5rem; font-weight: bold; color: #27ae60; }
+        .checkout-btn { background: #2ecc71; color: white; border: none; padding: 15px 30px; font-size: 1.1rem; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .empty-msg { text-align: center; padding: 40px; color: #888; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>SmartCart</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="cart.html">🛒 Cart</a>
+    </div>
+</nav>
+
+<div class="cart-container">
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-list">
+        </div>
+
+    <div class="cart-summary" id="cart-summary">
+        <p>Total Amount: <span class="total-price" id="total-val">₹0</span></p>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+</div>
+
+<script>
+    function displayCart() {
+        const cart = JSON.parse(localStorage.getItem('smartCart')) || [];
+        const listContainer = document.getElementById('cart-list');
+        const summaryContainer = document.getElementById('cart-summary');
+        const totalVal = document.getElementById('total-val');
+        
+        listContainer.innerHTML = ''; 
+        let total = 0;
+
+        if (cart.length === 0) {
+            listContainer.innerHTML = '<p class="empty-msg">Your cart is empty. <a href="services.html">Go shopping!</a></p>';
+            summaryContainer.style.display = 'none';
+            return;
+        }
+
+        summaryContainer.style.display = 'block';
+
+        cart.forEach((item, index) => {
+            total += item.price;
+            listContainer.innerHTML += `
+                <div class="cart-item">
+                    <div>
+                        <strong>${item.name}</strong><br>
+                        <small>Price: ₹${item.price}</small>
+                    </div>
+                    <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                </div>
+            `;
+        });
+
+        totalVal.innerText = `₹${total}`;
+    }
+
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('smartCart'));
+        cart.splice(index, 1); 
+        localStorage.setItem('smartCart', JSON.stringify(cart));
+        displayCart(); 
+    }
+
+    function checkout() {
+        alert("Thank you for your order! Your items are on the way.");
+        localStorage.removeItem('smartCart');
+        window.location.href = 'index.html';
+    }
+
+
+    displayCart();
+</script>
+
+</body>
+</html>

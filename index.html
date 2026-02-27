@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCart - Shop Smarter</title>
+    <style>
+        /* General Styles */
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; background: #222; color: white; padding: 15px 5%; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: #3498db; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center; color: white; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-inline: auto; }
+        
+        .btn { background: #3498db; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .btn:hover { background: #2980b9; }
+
+        /* Features Section */
+        .features { display: flex; flex-wrap: wrap; justify-content: space-around; padding: 60px 5%; background: #fff; }
+        .feature-item { flex: 1; min-width: 250px; text-align: center; padding: 20px; }
+        .feature-item h3 { margin-top: 15px; color: #222; }
+
+        /* Description Section */
+        .description { padding: 60px 10%; background: #f9f9f9; text-align: center; }
+        .description h2 { margin-bottom: 20px; }
+
+        /* Footer */
+        footer { background: #222; color: #ccc; text-align: center; padding: 40px 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2 style="margin:0;">SmartCart</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Shop Smarter, Live Better</h1>
+    <p>Discover a curated collection of premium electronics, fashion, and home essentials at prices that make sense.</p>
+    <a href="services.html" class="btn">Start Shopping</a>
+</section>
+
+<section class="features">
+    <div class="feature-item">
+        <div style="font-size: 40px;">🚚</div>
+        <h3>Free Shipping</h3>
+        <p>On all orders over $50. Fast, reliable, and tracked right to your door.</p>
+    </div>
+    <div class="feature-item">
+        <div style="font-size: 40px;">🔒</div>
+        <h3>Secure Payment</h3>
+        <p>Your security is our priority. We use industry-leading SSL encryption.</p>
+    </div>
+    <div class="feature-item">
+        <div style="font-size: 40px;">⭐</div>
+        <h3>Quality Assured</h3>
+        <p>Every product in our store undergoes a strict 5-point quality check.</p>
+    </div>
+</section>
+
+<section class="description">
+    <h2>Why Choose SmartCart?</h2>
+    <p>Unlike other retailers, SmartCart focuses on <strong>value over volume</strong>. We don't just list every product available; we hand-pick items that offer the best durability and design. Whether you're upgrading your home office or looking for the perfect gift, we've done the research so you don't have to.</p>
+</section>
+
+<footer>
+    <p>&copy; 2026 SmartCart Inc. All rights reserved.</p>
+    <p><small>Follow us on Social Media</small></p>
+</footer>
+
+<script>
+    console.log("SmartCart Home Page Loaded Successfully");
+</script>
+
+</body>
+</html>
